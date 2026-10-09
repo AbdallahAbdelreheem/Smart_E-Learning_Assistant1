@@ -7,9 +7,8 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
 # Project paths
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-MODEL_PATH = PROJECT_ROOT / "models" / "academic_performance_classifier.joblib"
-
+PROJECT_ROOT = Path(__file__).resolve().parent
+MODEL_PATH = PROJECT_ROOT / "academic_performance_classifier.joblib"
 # Load the trained pipeline, including preprocessing
 if not MODEL_PATH.exists():
     raise FileNotFoundError(f"Model file not found: {MODEL_PATH}")
